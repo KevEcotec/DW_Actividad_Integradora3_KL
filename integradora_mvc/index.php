@@ -1,10 +1,8 @@
 <?php
-require_once __DIR__ . "/controllers/ClienteController.php";
+require_once 'controllers/ClienteController.php';
 
 $controller = new ClienteController();
-
-// Router sencillo
-$action = isset($_GET["action"]) ? $_GET["action"] : "index";
+$action = $_GET["action"] ?? "index";
 
 switch ($action) {
     case "crear":
@@ -18,3 +16,4 @@ switch ($action) {
         $controller->index();
         break;
 }
+?>
